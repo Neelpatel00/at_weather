@@ -4,6 +4,7 @@ const fetch = require('node-fetch');
 const reload = require('reload')
 
 const app = express();
+const port = process.env.PORT || 2000;
 
 var temp;
 var sta;
@@ -73,4 +74,4 @@ app.get('/',(req, res) => {
 
  });
 
-app.listen(2000);
+app.listen(port);
