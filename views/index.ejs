@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <%- include("./partials/head.ejs") %> 
+
+   
+
+    
+    <% if (temp === undefined) { %>
+        <form action="/getdata" method="GET" class="form">
+            <input type="text" name="city" placeholder="enter city" class="put"><br />
+            <input type="submit" name="submit" value="Check Weather" class="button">
+        
+            </form>  
+    <% }
+     else { %>
+     
+    <div class="container-fluid px-1 px-md-4 py-5 mx-auto">
+        <div class="row d-flex justify-content-center px-3">
+            <div class="card">
+                <% if (sta === "Clear") { %>
+                <p class=" mr-4 mb-1 med-font lft"> <i id="ic" class="fas fa-sun" style="color: #eccc68;"></i> &nbsp; <%= sta %> </p>
+                <% }  %>
+                <% if (sta === "Clouds") { %>
+                <p class=" mr-4 mb-1 med-font lft"> <i id="ic" class="fas fa-cloud" style="color: #61A0DE ;"></i> &nbsp; <%= sta %> </p>
+                <% }  %>
+                <% if (sta === "Rain") { %>
+                <p class=" mr-4 mb-1 med-font lft"> <i id="ic" class="fas fa-cloud-showers-heavy" style="color: #6165DE ;"></i> &nbsp; <%= sta %> </p>
+                <% }  %>
+                <% if (sta === "Haze") { %>
+                <p class=" mr-4 mb-1 med-font lft"> <i id="ic" class="fas fa-smog" style="color: #B3B6B7;"></i> &nbsp; <%= sta %> </p>
+                <% }  %>
+
+
+                <h2 class="ml-auto mr-4 mt-3 mb-0"><%= city %></h2>
+                <h1 class="ml-auto mr-4 large-font"><%= temp %>&#176;C</h1>
+                <p class="time-font mb-0 ml-4 mt-auto" id="time"><span class="sm-font"></span></p>
+                <p class="ml-4 mb-4" id="date"></p>
+            </div>
+        </div>
+    </div>
+   
+    
+    <% } %>   
+       <%- include("./partials/date.ejs") %>
+       <div class="btn">
+       <%- include("./partials/footer.ejs") %>
+       </div>
+</body>
+</html>

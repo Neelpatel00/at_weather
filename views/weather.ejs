@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %> 
+
+        <form action="/getdata" method="GET" class="form">
+        <input type="text" name="city" placeholder="enter city" class="put"><br />
+        <input type="submit" name="submit" value="Check Weather" class="button">
+    
+        </form>  
+        <div class="btn">
+            <%- include("./partials/footer.ejs") %>
+        </div>
+</body>
+</html>
